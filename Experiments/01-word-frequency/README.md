@@ -100,3 +100,110 @@ My goal is to gain enough practical experience to make better judgments about pr
 - what I should learn next
 
 This 30-day plan is an experiment, not a commitment to follow one path forever. I will adjust it when my experience gives me better information.
+
+# My Programming Learning Notes
+
+## Day 00
+
+To begin with, I read the introduction. Several ideas and examples impressed me.
+
+The book introduced a simple password-checking program:
+
+```python
+password_file = open("SecretPasswordFile.txt")
+secret_password = password_file.read()
+
+print("Enter your password.")
+typed_password = input()
+
+if typed_password == secret_password:
+    print("Access granted")
+    if secret_password == "12345":
+        print("That password is one that an idiot puts on their luggage.")
+else:
+    print("Access denied")
+```
+
+What impressed me was the author's systematic way of teaching. The example was simple, but it showed how a program can:
+
+1. read information from a file
+2. ask the user for input
+3. compare two values
+4. make a decision
+5. display different results
+
+One idea that may be useful for my future learning is:
+
+> Programming requires deduction and attention to detail.
+
+I am beginning to understand that a computer cannot infer my intention in the same way that a human can. I need to express each step clearly.
+
+## Day 01
+
+I read Chapter 1, **Python Basics**, in about eight hours.
+
+I wrote down some important sentences in Obsidian, reproduced all the code in the chapter, and completed and corrected the exercises at the end.
+
+## Summary
+
+The chapter introduced several basic concepts:
+
+- values
+- operators such as `+`, `-`, `*`, `/`, `%`, and `**`
+- expressions
+- statements
+- data types
+- strings
+- integers
+- floating-point numbers
+- type conversion
+- input and output
+- string operations
+
+My current understanding is:
+
+- An expression produces or evaluates to a value.
+- An assignment statement associates a value with a variable name.
+- Different values have different data types.
+- Input allows a program to receive information.
+- Output allows a program to show information.
+
+Although the chapter was not very long, I had difficulty recalling everything after reading it. I remembered much less than I expected. This was frustrating, but it also showed me that reading and recalling are different activities.
+
+## Exercise and Corrections
+
+I completed the exercises at the end of the chapter and corrected my mistakes.
+
+I will add more details about the exercises tomorrow.
+
+## Questions for Further Review
+
+- What is the difference between an expression and a statement?
+- Why does `input()` always return a string?
+- How does type conversion work?
+- What is the difference between an integer and a floating-point number?
+- Which string operations do I still need to practice?
+
+## Next Step
+
+I will review Chapter 1 briefly and write a small program without copying the example directly from the book.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
