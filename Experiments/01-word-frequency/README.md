@@ -188,6 +188,162 @@ I will add more details about the exercises tomorrow.
 
 I will review Chapter 1 briefly and write a small program without copying the example directly from the book.
 
+## Day 02
+
+Today, I spent 2.5 hours learning about `if` statements and flow control.
+
+### Main knowledge
+
+#### Boolean values
+
+Boolean values have only two possible values:
+
+```python
+True
+False
+```
+
+#### Boolean operators
+
+The Boolean operators in Python are:
+
+```python
+and
+or
+not
+```
+
+`and` and `or` combine Boolean expressions. `not` reverses the truth value of one expression.
+
+#### Comparison operators
+
+The main comparison operators are:
+
+```text
+==    equal to
+!=    not equal to
+<     less than
+>     greater than
+<=    less than or equal to
+>=    greater than or equal to
+```
+
+A comparison produces a Boolean value.
+
+For example:
+
+```python
+age = 33
+
+print(age < 40)  # True
+print(age == 18) # False
+```
+
+Comparison operators can be combined with Boolean operators:
+
+```python
+age = 33
+has_ticket = True
+
+print(age > 18 and has_ticket)  # True
+```
+
+#### Flowcharts
+
+A flowchart is an intuitive way to understand the flow of a program. It can show the different steps and decisions before I write the code.
+
+#### `if`, `elif`, and `else`
+
+The basic structure is:
+
+```python
+if condition:
+    # execute this branch if the condition is True
+elif another_condition:
+    # execute this branch if the first condition is False
+    # and the second condition is True
+else:
+    # execute this branch if all previous conditions are False
+```
+
+My current understanding is:
+
+```text
+if / elif: If the condition is True, execute that branch.
+else: If all previous conditions are False, execute this branch.
+```
+
+`if` and `elif` require conditions, but `else` does not have its own condition. `else` represents the remaining case: none of the previous conditions is true.
+
+For example:
+
+```python
+name = "Bob"
+age = 10
+
+if name == "Alice":
+    print("Hi, Alice.")
+elif age < 12:
+    print("You are not Alice, kiddo.")
+else:
+    print("You are neither Alice nor a child.")
+```
+
+In this example:
+
+- If `name == "Alice"` is `True`, Python executes the `if` branch.
+- If the `if` condition is `False` but `age < 12` is `True`, Python executes the `elif` branch.
+- If both conditions are `False`, Python executes the `else` branch.
+
+Only one branch in this `if`/`elif`/`else` structure is executed.
+
+The `else` branch does not necessarily need to produce output. It can perform another action:
+
+```python
+age = 20
+
+if age < 18:
+    print("You are a minor.")
+else:
+    age = age + 1
+```
+
+In this example, the `else` branch is executed, but it does not print anything. It changes the value of `age` instead.
+
+### My thoughts about the example
+
+I did not like one of the examples in this chapter because its logic did not feel realistic to me:
+
+```python
+name = "Alice"
+age = 33
+
+if name == "Alice":
+    print("Hi, Alice.")
+elif age < 12:
+    print("You are not Alice, kiddo.")
+```
+
+The second condition is only checked when the person is not Alice, so the two conditions do not seem closely related.
+
+I think this example was mainly designed to demonstrate the order of `if` and `elif`, rather than to represent realistic program logic.
+
+This helped me notice that an example can be useful for demonstrating syntax without being a good model of real-world program design.
+
+## Exercise: Opposite Day
+
+I completed the short program about “Opposite Day,” but I do not have much cultural background about this idea. When I ran the same code, I was confused about its specific logic.
+
+I currently understand that the exercise is based on the imaginary idea that people should say the opposite of what they mean on “Opposite Day.” However, I still need to examine the code step by step to understand how the conditions change the output.
+
+## Questions for further review
+
+- What exactly is the difference between `if` and `elif`?
+- Why does Python stop checking later branches after one condition is `True`?
+- How should I organize several related conditions?
+- When is a Boolean expression clearer if I split it into separate variables?
+- What is the difference between a realistic condition and an example designed mainly to demonstrate syntax?
+
 
 
 
