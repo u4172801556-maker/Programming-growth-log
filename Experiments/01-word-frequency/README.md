@@ -345,10 +345,12 @@ I currently understand that the exercise is based on the imaginary idea that peo
 - What is the difference between a realistic condition and an example designed mainly to demonstrate syntax?
 
 
-
-
-
-
+#DAY03
+Today and yesterday afternoon I spend sometime reading and typing codes in the chapter3loops.
+#Knowledge
+loops are better for automation.For loop statement usually for specific number of times and while is better for conditional circumstance.
+#Output 
+I drew some flowchart about code in this chapter.
 
 
 
