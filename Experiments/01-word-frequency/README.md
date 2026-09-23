@@ -345,19 +345,79 @@ I currently understand that the exercise is based on the imaginary idea that peo
 - What is the difference between a realistic condition and an example designed mainly to demonstrate syntax?
 
 
-#DAY03
-Today and yesterday afternoon I spend sometime reading and typing codes in the chapter3loops.
-#Knowledge
-loops are better for automation.For loop statement usually for specific number of times and while is better for conditional circumstance.
-#Output 
-I drew some flowchart about code in this chapter.
+# Day 03
 
+Yesterday afternoon and today, I spent some time reading and typing the code examples in Chapter 3, **Loops**.
 
+## Knowledge
 
+At the end of an `if` statement, program execution continues with the code after the statement.
 
+At the end of a `while` loop, program execution jumps back to the beginning of the loop and checks the condition again.
 
+Loops are useful for automation because they allow a program to repeat an action many times. A computer can perform thousands of repetitions in a few seconds.
 
+A `for` loop is often used when I want to iterate over a sequence or repeat something a known number of times.
 
+A `while` loop is often used when I want to continue repeating an action as long as a condition remains `True`.
+
+### `break`
+
+`break` immediately exits the current loop.
+
+### `continue`
+
+`continue` skips the rest of the current iteration and proceeds to the next iteration of the loop.
+
+## My Understanding
+
+The basic difference between an `if` statement and a loop is:
+
+- An `if` statement checks a condition and usually chooses whether to execute a block once.
+- A loop checks a condition or iterates over a sequence and may execute a block repeatedly.
+
+A loop must eventually stop. Otherwise, it may become an infinite loop.
+
+## Output
+
+I drew several flowcharts to represent the execution flow of the code examples in this chapter.
+
+Drawing the flowcharts helped me understand how the program moves back to the beginning of a loop and how `break` and `continue` change the normal flow.
+
+## Questions for Further Review
+
+- What is the difference between a `for` loop and a `while` loop in practice?
+- How can I make sure that a `while` loop eventually stops?
+- What is the difference between `break` and `continue`?
+- How does indentation determine which statements belong to a loop?
+
+![Day 03 flowchart](./day03-flowchart.png)
+
+```python
+# This is a guess the number game.
+import random
+secret_number = random.randint(1, 20)
+print('I am thinking of a number between 1 and 20.')
+
+for guesses_taken in range(1, 7):
+    print('Take a guess.')
+    guess = int(input('>'))
+
+    if guess < secret_number:
+        print('Your guess is too low.')
+    elif guess > secret_number:
+        print('Your guess is too high.')
+    else:
+        break
+
+if guess == secret_number:
+    print('Good job! You got it in ' + str(guesses_taken) + ' guesses!')
+else:
+    print('Nope. The number was ' + str(secret_number))
+The code above corresponds to the flowchart shown in the image.
+```
+
+I spent almost an hour drawing this flowchart in diagrams.net, mostly because I was learning how to use the tool. I think the drawing itself would have taken only a few minutes. I probably will not use this flowchart tool again.
 
 
 
