@@ -419,8 +419,172 @@ The code above corresponds to the flowchart shown in the image.
 
 I spent almost an hour drawing this flowchart in diagrams.net, mostly because I was learning how to use the tool. I think the drawing itself would have taken only a few minutes. I probably will not use this flowchart tool again.
 
+## Day 04
 
+I learned Chapter 4, **Functions**, somewhat slowly.
 
+The concepts that felt most unfamiliar in this chapter were the **call stack** and **frames**.
+
+The call stack is like stacking plates: each function call is added to the top, and the program must return to the previous layer from top to bottom. In other words, Python keeps track of which function called which function, and returns to the right place after the current function finishes.
+
+### Main knowledge
+
+#### Arguments and parameters
+
+Arguments and parameters are related but not the same thing.
+
+- A **parameter** is a variable defined in the function definition.
+- An **argument** is the value passed to the function when the function is called.
+
+This allows the same function to be reused for different inputs instead of writing duplicate code.
+
+#### Return values and `return` statements
+
+A function can produce a value using `return`.
+
+The `return` statement does two things:
+
+1. It sends a value back to the caller.
+2. It stops the current function immediately.
+
+This is important because the function will not continue to run after `return` is executed.
+
+Example:
+
+```python
+def f():
+    for i in range(3):
+        if i == 1:
+            return i
+    return 99
+```
+The return value in this example is `1`. The `return` statement that produces this value is `return i`, which returns `1` when `i == 1`.
+
+You may have the same question as I did: why does `return 99` not play a role in this example?
+
+The indentation of the code is important because it represents the execution structure. The `for` loop and `return 99` are at the same level of indentation. When `i == 1`, the function executes `return i`. In this case, `i` is `1`, so the function returns `1` and ends immediately. Execution then returns to the code outside the function. Therefore, `return 99` is never executed.
+
+Another example is:
+
+```python
+def f():
+    return lambda x: x + 1
+
+g = f()
+print(g)
+```
+
+In this example, the return value is a function object.
+
+The call `f()` returns the function object created by the `lambda` expression, and that function object is stored in the variable `g`. Therefore, `print(g)` works because `g` refers to the returned function object.
+
+The other important concept is the difference between `print` and `return`. Here are two examples.
+
+### Example A: Using `print`
+
+```python
+def add_with_print(a, b):
+    print(a + b)
+
+x = add_with_print(2, 3)
+print(x)
+print(x + 10)
+```
+
+The function prints `5` on the screen successfully. However, it does not return the value `5`. Because there is no explicit `return` statement, Python implicitly returns `None`.
+
+Therefore, `print(x)` prints:
+
+```python
+None
+```
+
+Then `print(x + 10)` causes an error because `x` is `None`, not `5`. The value `5` was displayed on the screen, but it was not stored in `x`.
+
+### Example B: Using `return`
+
+```python
+def add_with_return(a, b):
+    return a + b
+
+y = add_with_return(2, 3)
+print(y)
+print(y + 10)
+```
+
+In this example, `add_with_return(2, 3)` returns `5`, so the value `5` is stored in `y`.
+
+Therefore:
+
+```python
+print(y)
+```
+
+prints:
+
+```python
+5
+```
+
+and:
+
+```python
+print(y + 10)
+```
+
+prints:
+
+```python
+15
+```
+
+The difference is that `print()` only displays a value on the screen, while `return` sends a value back to the code that called the function.
+
+### Global variables and local variables
+
+The position of a variable is important because it can determine the result.
+
+#### Example A
+
+```python
+def spam():
+    global eggs
+    eggs = 'spam'
+
+eggs = 'global'
+spam()
+print(eggs)
+```
+
+This prints:
+
+```python
+spam
+```
+
+The `global` keyword tells Python that `eggs` refers to the global variable. When `spam()` is called, the global variable `eggs` is changed to `'spam'`.
+
+#### Example B
+
+```python
+def spam():
+    global eggs
+    eggs = 'spam'
+
+spam()
+eggs = 'global'
+print(eggs)
+```
+
+This prints:
+
+```python
+global
+```
+
+The assignment `eggs = 'global'` occurs after the call to `spam()`. Therefore, the later assignment redefines the value of `eggs` as `'global'`.
+
+These examples show that both the scope of a variable and the order of execution are important.
 
 
 
